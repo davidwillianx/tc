@@ -1,22 +1,28 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Game Tab
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content forceOverscroll="false">
+  <ion-row>
+    <ion-col size="6">
+      <ion-list dragula="pokemon" [(dragulaModel)]="pokemons">
+        <ion-item *ngFor="let pokemon of pokemons; let index=index;">
+          <ion-label>{{pokemon.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+    <ion-col size="6">
+      <ion-list size="12" dragula="pokemon" [(dragulaModel)]="pokemonsChoosen">
+        <ion-item *ngFor="let pokemon of pokemonsChoosen; let index=index;">
+          <ion-label>{{pokemon.name}}</ion-label>
+        </ion-item>
+      </ion-list>
 
-  <div dragula="Friuts">
-  </div>
-
-  <div dragula="Objects">
-  </div>
-
-  <div dragula="People">
-    <p>Banana</p>
-    <p>Apple</p>
-  </div>
+    </ion-col>
+  </ion-row>
 
 </ion-content>
