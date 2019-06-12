@@ -1,17 +1,30 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LevelComponent } from './level.component';
-import { LevelRoutingModule } from './level-routing.module';
-import { IonicModule } from '@ionic/angular';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { DragulaModule } from 'ng2-dragula';
+
+import { FirstComponent } from './first/first.component';
+import { LevelRoutingModule } from './level-routing.module';
+import { LevelComponent } from './level.component';
+import { SecondComponent } from './second/second.component';
+import { ThirdComponent } from './third/third.component';
+import { FourthComponent } from './fourth/fourth.component';
 
 @NgModule({
-  declarations: [LevelComponent],
   imports: [
     IonicModule,
     FormsModule,
     CommonModule,
-    LevelRoutingModule
-  ]
+    LevelRoutingModule,
+    DragulaModule.forRoot()
+  ],
+  declarations: [
+    LevelComponent,
+    FirstComponent,
+    SecondComponent,
+    ThirdComponent,
+    FourthComponent
+  ],
 })
 export class LevelModule { }

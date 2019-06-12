@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>First Level</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row ion-align-items-center>
+      <ion-col size="12">
+        <div class="header-info">
+          Nesta etapa, você precisa arrastar a forma para o canto inferior
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row ion-align-items-center>
+
+      <ion-col
+        size="3"
+        offset="5"
+        dragula="gameElements"
+      >
+        <div class="shape-circle-draggable"></div>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row class="bottom-target">
+
+      <ion-col
+        size="3"
+        offset="10"
+      >
+
+        <div
+          dragula="gameElements"
+          class="shape-square-droppable"
+        >
+          target
+        </div>
+
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
