@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DragulaService } from 'ng2-dragula';
 import { Subscription } from 'rxjs';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-first',
@@ -18,7 +19,8 @@ export class FirstComponent implements OnInit, OnDestroy {
    */
   constructor(
     private dragulaService: DragulaService,
-    private alertControler: AlertController
+    private alertControler: AlertController,
+    private router: Router
   ) {
 
     dragulaService.createGroup('gameElements', {});
@@ -41,7 +43,19 @@ export class FirstComponent implements OnInit, OnDestroy {
     const successDrop = await this.alertControler.create({
       header: 'Congratz!',
       message: 'You complete this mission!',
-      buttons: ['Reset', 'Next']
+      buttons: [
+        {
+          text: 'Reset',
+          handler: () => { }
+        },
+        {
+          text: 'Next',
+          handler: () => {
+            this.router.navigateByUrl('/game/level/second');
+          }
+        }
+
+      ]
     });
 
     successDrop.present();

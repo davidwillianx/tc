@@ -1,5 +1,7 @@
 {
   "name": "teaching-tablet",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
